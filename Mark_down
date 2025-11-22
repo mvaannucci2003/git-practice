@@ -1,0 +1,29 @@
+# My MLSecOps Workflow Protocol
+
+## 1. The "Zone" Decision
+* **Zone A (School/OneDrive):**
+    * *Use for:* HW, Word Docs, Simple Scripts.
+    * *Rule:* `git config core.filemode false` (Ignore permission errors).
+    * *Compiler:* Expect it to be slow.
+* **Zone B (~/projects):**
+    * *Use for:* ML Training, Databases, C/C++ Compilation, Docker.
+    * *Rule:* Pure Linux speed. Backed up by GitHub, not OneDrive.
+
+## 2. The "New Project" Algorithm
+1.  `proj` (Go to projects)
+2.  `take my-new-tool` (Create folder & enter)
+3.  `git init`
+4.  `code .` (Open VS Code)
+5.  **Terminal:** `conda create -n my-tool python=3.10`
+6.  **VS Code:** Select Interpreter -> `my-tool`
+
+## 3. The Safety Checks
+* **Before Coding:** `git checkout -b feat/new-idea` (Never code on main)
+* **Before Committing:** `gs` (Check status - watch for unwanted files)
+* **Before Pushing:** `python -m flake8 .` (Lint check)
+
+## 4. Zsh Superpowers
+* `!!` -> Run the last command with sudo (e.g., `sudo !!`)
+* `Ctrl + R` -> Find that complex Docker command I typed 3 days ago.
+* `take <name>` -> Make directory and enter it.
+* `proj` / `school` -> Teleport to zones.
